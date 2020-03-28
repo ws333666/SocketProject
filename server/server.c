@@ -55,6 +55,7 @@ int main(int argc, char **argv) {
         if ((fd = accept(server_listen, NULL, NULL)) < 0) {
             perror("accept");
         }
+        printf("New Client Login！\n");
 
         pthread_create(&tid, NULL, work, (void *)&fd);
     }
