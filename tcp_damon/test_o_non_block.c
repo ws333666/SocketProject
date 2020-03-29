@@ -1,11 +1,13 @@
 /*************************************************************************
-	> File Name: tcp_client.h
+	> File Name: test_o_non_block.c
 	> Author: suyelu
 	> Mail: suyelu@haizeix.com
-	> Created Time: 六  3/28 14:34:41 2020
+	> Created Time: 日  3/29 14:13:10 2020
  ************************************************************************/
 
-#ifndef _TCP_CLIENT_H
-#define _TCP_CLIENT_H
-int socket_connect(char *host, int port);
-#endif
+#include "../common/head.h"
+
+int main () {
+    printf("%d\n",O_CREAT);
+}
+
