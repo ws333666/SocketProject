@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: ../common/head.h
-	> Author: suyelu
-	> Mail: suyelu@haizeix.com
+	> Author: wangshaui
+	> Mail: ws1519704327@126.com
 	> Created Time: 六  3/28 14:23:19 2020
  ************************************************************************/
 
@@ -18,4 +18,5 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <stdbool.h>
+#include <signal.h>
 #endif

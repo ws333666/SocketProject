@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: client.c
-	> Author: suyelu
-	> Mail: suyelu@haizeix.com
+	> Author: wangshuai
+	> Mail: ws1519704327@126.com
 	> Created Time: 日  3/29 18:16:00 2020
  ************************************************************************/
 
@@ -9,7 +9,6 @@
 #include "../common/tcp_client.h"
 #include "../common/common.h"
 #include "../common/color.h"
-#include <signal.h>
 
 char *conf = "./client.conf";
 int sockfd;

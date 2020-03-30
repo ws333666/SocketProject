@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: server.c
-	> Author: suyelu
-	> Mail: suyelu@haizeix.com
+	> Author: wangshuai
+	> Mail: ws1519704327@126.com
 	> Created Time: Sun 22 Mar 2020 08:24:46 PM CST
  ************************************************************************/
 
