@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: common.h
-	> Author: wangshuai
-	> Mail: ws1519704327@126.com
+	> Author: suyelu
+	> Mail: suyelu@haizeix.com
 	> Created Time: Sat 28 Mar 2020 08:43:27 PM CST
  ************************************************************************/
 

@@ -1,6 +1,6 @@
 /*************************************************************************
 	> File Name: ../common/head.h
-	> Author: wangshaui
+	> Author: wangshuai
 	> Mail: ws1519704327@126.com
 	> Created Time: 六  3/28 14:23:19 2020
  ************************************************************************/
@@ -18,4 +18,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <stdbool.h>
+#include <pwd.h>
+#include <sys/wait.h>
+#include <signal.h>
 #endif
