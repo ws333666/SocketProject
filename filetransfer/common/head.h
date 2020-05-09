@@ -21,5 +21,4 @@
 #include <pwd.h>
 #include <sys/wait.h>
 #include <signal.h>
-#include <errno.h>
 #endif

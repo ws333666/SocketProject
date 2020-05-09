@@ -13,12 +13,12 @@
 int main(int argc, char **argv) {
     char msg[512] = {0};
     int sockfd;
-    if (argc != 3) {
+    if (argc != 4) {
         fprintf(stderr, "Usage: %s ip port\n", argv[0]);
         return 1;
     }
 
-    if ((sockfd = socket_connect(argv[1], atoi(argv[2]))) < 0) {
+    if ((sockfd = socket_connect_timeout(argv[1], atoi(argv[2]), atoi(argv[3]))) < 0) {
         perror("socket_connect");
         return 2;
     }

@@ -35,7 +35,6 @@ void do_echo(int fd) {
             continue;
         }
     }
-
 }
 
 typedef struct {
@@ -58,9 +57,9 @@ void TaskQueueInit(TaskQueue *queue, int sum) {
 void TaskQueuePush(TaskQueue *queue, int fd) {
     pthread_mutex_lock(&queue->mutex);
     queue->fd[queue->tail] = fd;
-    printf(GREEN"<QueuePush> "NONE": %d \n", fd);
+    printf(GREEN"<TaskPush> "NONE": %d \n", fd);
     if (++queue->tail == queue->sum) {
-        printf(RED"<queueEnd> "NONE": %d \n", fd);
+        printf(RED"<QueueEnd> "NONE": %d \n", fd);
         queue->tail = 0;
     }
     pthread_cond_signal(&queue->cond);
@@ -72,7 +71,9 @@ int TaskQueuePop(TaskQueue *queue) {
     while (queue->tail == queue->head) 
         pthread_cond_wait(&queue->cond, &queue->mutex);
     int fd = queue->fd[queue->head];
+    printf(GREEN"<TaskPop> "NONE": %d \n", fd);
     if (++queue->head == queue->sum)
+        printf(RED"<QueueEnd> "NONE": %d \n", fd);
         queue->head = 0;
     pthread_mutex_unlock(&queue->mutex);
     return fd;
@@ -97,14 +98,13 @@ int main(int argc, char *argv[]) {
 
     int port, server_listen, fd;
     port = atoi(argv[1]);
-
     if ((server_listen = socket_create(port)) < 0) {
         perror("socket_create");
         exit(1);
     }
     TaskQueue queue;
     TaskQueueInit(&queue, MAXTASK);
-    pthread_t *tid = calloc(MAXTHREAD, sizeof(pthread_t));
+    pthread_t *tid = (pthread_t *)calloc(MAXTHREAD, sizeof(pthread_t));
 
     for (int i = 0; i < MAXTHREAD; i++) {
         pthread_create(&tid[i], NULL, thread_run, (void *)&queue);

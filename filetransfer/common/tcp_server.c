@@ -6,8 +6,7 @@
  ************************************************************************/
 
 #include "head.h"
-
-int socket_create (int port) {
+int socket_create(int port) {
     int server_listen;
     if ((server_listen = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         return -1;
